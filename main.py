@@ -14,8 +14,6 @@ from secondary import play_music
 import os
 import numpy as np
 
-
-
 def speech_to_text():
     recognizer = sr.Recognizer()
     with sr.Microphone(1) as mic:
@@ -29,6 +27,7 @@ def speech_to_text():
         print("Me  -->  ERROR")
 
     return text
+
 
 def text_to_speech(text):
 
@@ -57,8 +56,7 @@ def text_to_speech(text):
 
         except KeyboardInterrupt:
             pass
-        
-
+    
 
 def RUN():
 
@@ -126,7 +124,6 @@ def RUN():
 
         text_to_speech(res)
     print("----- Closing down-----")
-
 
 if True:
     print("----- Starting up -----")
