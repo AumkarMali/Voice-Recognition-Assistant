@@ -1,8 +1,5 @@
-# for speech-to-text
 import speech_recognition as sr
-# for text-to-speech
 import simpleaudio as sa
-
 from ibm_watson import TextToSpeechV1
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 import transformers
@@ -13,14 +10,10 @@ import requests
 import time
 from threading import Thread
 import wolframalpha
-
 from secondary import play_music
-# for data
 import os
-
-
 import numpy as np
-# Building the AI
+
 
 
 def speech_to_text():
@@ -67,7 +60,7 @@ def text_to_speech(text):
         
 
 
-def RUN_CORTANA():
+def RUN():
 
     RunLoop = True
     print("RUNNING MAIN FUNCTION")
@@ -78,7 +71,7 @@ def RUN_CORTANA():
         text = speech_to_text()
 
         if "weather" in text:
-            city = "mississauga"
+            city = "#ENTER CITY HERE"
 
             url = 'http://api.openweathermap.org/data/2.5/weather?q={}&appid=55e2a19f818d978dbf28576c98ae2dc2&units=metric'.format(city)
             res = requests.get(url)
@@ -118,8 +111,8 @@ def RUN_CORTANA():
 
         else:
             if any(i in text for i in
-                   ["exit", "close", "bye", "cya", "have a nice day", "see you", "talk to you later"]):
-                res = np.random.choice(["Have a good day", "Bye", "Goodbye", "Hope to meet soon", "peace out!"])
+                   ["exit", "close"]):
+                res = "PROGRAM EXITING"
                 RunLoop = False
 
             elif text=="ERROR":
@@ -132,12 +125,12 @@ def RUN_CORTANA():
 
 
         text_to_speech(res)
-    print("----- Closing down Cortana -----")
+    print("----- Closing down-----")
 
 
 if True:
     print("----- Starting up -----")
-    RUN_CORTANA()
+    RUN()
 
 
 
