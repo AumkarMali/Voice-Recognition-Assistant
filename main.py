@@ -33,7 +33,7 @@ def text_to_speech(text):
 
     if text != "":
         text = (text.replace("cortana", "")).lower()
-        authenticator = IAMAuthenticator('JCoD4sHVpURg-mRU2Z2M7AdpNhnc5rYJFSBeaK7qUk5H')
+        authenticator = IAMAuthenticator('#enter API key')
         text_to_speech = TextToSpeechV1(
             authenticator=authenticator
         )
