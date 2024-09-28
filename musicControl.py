@@ -9,10 +9,8 @@ import os.path
 import urllib.request
 import re
 import youtube_dl
-
 import winsound
 import random
-
 import webbrowser
 from ibm_watson import TextToSpeechV1
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
@@ -193,7 +191,6 @@ def play_music(text):
         play_object.wait_done()
 
 
-'''
 def play_playlist():
     path = 'C:\\Users\\docto\\PycharmProjects\\Cortana 2.6\\Playlist\\'
     num = 0
@@ -226,4 +223,4 @@ def play_random():
     print("Now playing " + music_name)
     p = vlc.MediaPlayer(os.path.join(music_dir, music))
     p.play()
-'''
+
