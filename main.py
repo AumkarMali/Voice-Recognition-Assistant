@@ -40,7 +40,7 @@ def text_to_speech(text):
         text_to_speech.set_service_url(
             'https://api.us-south.text-to-speech.watson.cloud.ibm.com/instances/9eea1d81-0642-4cd7-8560-2782ee6d4ff1')
 
-        print("CORTANA --> ", text)
+        print("PROGRAM --> ", text)
 
         with open('speech.wav', 'wb') as audio_file:
             audio_file.write(
