@@ -16,7 +16,7 @@ import numpy as np
 
 def speech_to_text():
     recognizer = sr.Recognizer()
-    with sr.Microphone(1) as mic:
+    with sr.Microphone("enter microphone number") as mic:
         print("Now listening to audio input.....")
         audio = recognizer.listen(mic)
         text="ERROR"
